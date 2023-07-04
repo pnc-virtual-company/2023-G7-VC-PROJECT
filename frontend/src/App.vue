@@ -1,30 +1,28 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <v-app>
+    <!-- sidebar -->
+    <SideBar/>
+    <NavigationBar/>
+    <v-main>
+      <!-- cards -->
+      <AdminPage/>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script setup>
+  import SideBar from "./components/sidebar/SideBar.vue";
+  import NavigationBar from "./components/navbar/NavigationBar.vue";
+  import AdminPage from "./views/SchoolAdmin.vue";
+// export default {
+//   name: 'App',
 
-nav {
-  padding: 30px;
-}
+//   components: {
+    
+//   },
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+//   data: () => ({
+//     //
+//   }),
+// }
+</script>
